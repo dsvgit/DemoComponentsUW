@@ -18,20 +18,22 @@ export default props => {
   return (
     <View style={styles.container}>
       <ToolbarDemo />
-      <ScrollView style={styles.scrollContainer}>
-        <ViewPagerDemo />
-        <TextInputDemo />
-        <SwitchDemo />
-        <SliderDemo />
-        <ProgressBarDemo />
-        <ButtonsDemo />
-        <ActivityIndicatorDemo />
-        <ImageDemo />
-        <ListViewDemo />
-        <ModalDemo />
-        <PickerDemo />
-        <StatusBar backgroundColor="#5E8D48" barStyle="light-content" />
+      <ScrollView>
+        <View style={styles.scrollContainer}>
+          <ViewPagerDemo />
+          <TextInputDemo />
+          <SwitchDemo />
+          <SliderDemo />
+          <ProgressBarDemo />
+          <ButtonsDemo />
+          <ActivityIndicatorDemo />
+          <ImageDemo />
+          <ListViewDemo />
+          <ModalDemo />
+          <PickerDemo />
+        </View>
       </ScrollView>
+      <StatusBar backgroundColor="#5E6D48" barStyle="light-content" />
     </View>
   );
 }
@@ -40,6 +42,7 @@ const styles = StyleSheet.create({
   scrollContainer: {
     alignSelf: 'stretch',
     padding: 10,
+    paddingBottom: 70,
     backgroundColor: '#F5FCFF',
   }
 });
