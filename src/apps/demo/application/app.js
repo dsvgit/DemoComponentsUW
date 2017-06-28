@@ -11,28 +11,35 @@ import ProgressBarDemo from './children/progressBarDemo/components/main';
 import SliderDemo from './children/sliderDemo/components/main';
 import SwitchDemo from './children/switchDemo/components/main';
 import TextInputDemo from './children/textInputDemo/components/main';
+import ViewPagerDemo from './children/viewPagerDemo/components/main';
+import ToolbarDemo from './children/toolbarDemo/components/main';
 
 export default props => {
   return (
-    <ScrollView style={styles.container}>
-      <TextInputDemo />
-      <SwitchDemo />
-      <SliderDemo />
-      <ProgressBarDemo />
-      <ButtonsDemo />
-      <ActivityIndicatorDemo />
-      <ImageDemo />
-      <ListViewDemo />
-      <ModalDemo />
-      <PickerDemo />
-      <StatusBar backgroundColor="#5E8D48" barStyle="light-content" />
-    </ScrollView>
+    <View style={styles.container}>
+      <ToolbarDemo />
+      <ScrollView style={styles.scrollContainer}>
+        <ViewPagerDemo />
+        <TextInputDemo />
+        <SwitchDemo />
+        <SliderDemo />
+        <ProgressBarDemo />
+        <ButtonsDemo />
+        <ActivityIndicatorDemo />
+        <ImageDemo />
+        <ListViewDemo />
+        <ModalDemo />
+        <PickerDemo />
+        <StatusBar backgroundColor="#5E8D48" barStyle="light-content" />
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignSelf: 'stretch'
+  scrollContainer: {
+    alignSelf: 'stretch',
+    padding: 10,
+    backgroundColor: '#F5FCFF',
   }
 });

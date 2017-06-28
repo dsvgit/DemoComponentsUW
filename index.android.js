@@ -17,20 +17,9 @@ import DemoApp from './src/apps/demo/application/app';
 export default class DemoComponentsUW extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <DemoApp />
-      </View>
+      <DemoApp />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'flex-start',
-    padding: 10,
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 AppRegistry.registerComponent('DemoComponentsUW', () => DemoComponentsUW);
