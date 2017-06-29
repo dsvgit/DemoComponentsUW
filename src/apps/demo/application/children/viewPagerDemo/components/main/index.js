@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
   pageStyle: {
     alignItems: 'center',
     padding: 20,
+    height: 100,
   }
 });

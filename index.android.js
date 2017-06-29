@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -12,12 +6,13 @@ import {
   View
 } from 'react-native';
 
-import DemoApp from './src/apps/demo/application/app';
+// import DemoApp from './src/apps/demo/application/app';
+import CalculatorApp from './src/apps/calculator/application/app';
 
 export default class DemoComponentsUW extends Component {
   render() {
     return (
-      <DemoApp />
+      <CalculatorApp />
     );
   }
 }
