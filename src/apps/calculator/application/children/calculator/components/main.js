@@ -3,6 +3,7 @@ import { View, Text, Picker, Switch } from 'react-native';
 
 import SearchControl from '../../searchInput/components/main';
 import NumberInput from '../../numberInput/components/main';
+import { navigate } from '../../../navigation';
 
 const CurrencyPicker = props => {
   return (
@@ -26,15 +27,14 @@ const TableItem = props => {
   );
 }
 
-export default class extends Component {
-
+class Calculator extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      fromSum: 100,
-      toSum: 100,
-      fromСurrency: 'RUS',
-      toСurrency: 'ENG',
+      fromSum: '100',
+      toSum: '100',
+      fromСurrency: 'rus',
+      toСurrency: 'eng',
       withTax: false
     }
   }
@@ -45,8 +45,12 @@ export default class extends Component {
       <View style={{flex: 1}}>
         <View style={{flex: 1, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, backgroundColor: '#fff'}}>
           <View style={{marginBottom: 10, ...styles.section}}>
-            <SearchControl label="Выберите место отправления перевода" title="Россия, Санкт-Петербург" />
-            <SearchControl label="Выберите место зачисления перевода" title="Украина, Киев" />
+            <SearchControl label="Выберите место отправления перевода"
+                           title="Россия, Санкт-Петербург"
+                           onPress={() => navigate({ routeName: 'SearchScreen'})} />
+            <SearchControl label="Выберите место зачисления перевода"
+                           title="Украина, Киев"
+                           onPress={() => navigate({ routeName: 'SearchScreen'})}/>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between', ...styles.section}}>
             <NumberInput label="Сумма перевода" onChangeText={(v) => this.setState({fromSum: v})} value={fromSum} autoCorrect={true} />
@@ -81,6 +85,8 @@ export default class extends Component {
     );
   }
 }
+
+export default Calculator;
 
 let styles = {
   section: {

@@ -1,12 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-// import nav from './children/navigator/reducers/main';
-import drawer from './children/drawer/reducers/main';
+import nav from './modules/navigator/reducers/main';
+import drawer from './modules/drawer/reducers/main';
 
 export default createStore(
   combineReducers({
-    // nav,
+    nav,
     drawer
   }),
   applyMiddleware(thunk)
